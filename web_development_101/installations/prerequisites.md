@@ -26,7 +26,7 @@ There are thousands of versions of Linux out there, but Ubuntu is undoubtedly on
 
 #### Step 2.1: Install VirtualBox
 
-Installing VirtualBox is very straightforward. It doesn't require much technical knowledge and is the same process as installing any other program on your Windows computer. Double clicking the downloaded file will start the installation process. During the installation, you'll be presented with various options. Leave them in their default state unless you are certain about their behavior. As the software installs, the progress bar might appear to be stuck; just wait for it to finish. 
+Installing VirtualBox is very straightforward. It doesn't require much technical knowledge and is the same process as installing any other program on your Windows computer. Double clicking the downloaded file will start the installation process. During the installation, you'll be presented with various options. Leave them in their default state unless you are certain about their behavior. As the software installs, the progress bar might appear to be stuck; just wait for it to finish.
 
 #### Step 2.2: Set up Xubuntu
 Now that you have VirtualBox installed, launch the program. Once open, you should see the start screen.
@@ -63,16 +63,16 @@ While your VM is running, do the following steps:
 
   1. Click "Devices" -> "Insert Guest additions CD image" in the menu bar
   2. Open a terminal by pushing `ctrl + alt+ t` on the keyboard, if a terminal does not open, click anywhere on the desktop of the VM and try again.
-  3. The following commands will ask you to type the password you setup earlier. As you type your password, you'll notice there is no visual feedback as this is a security measure. When prompted for your password, just type it and then push Enter on your keyboard. Enter the following command into the terminal: `sudo apt-get update`. Once the command has finished, enter `sudo apt-get upgrade`. 
+  3. The following commands will ask you to type the password you setup earlier. As you type your password, you'll notice there is no visual feedback as this is a security measure. When prompted for your password, just type it and then push Enter on your keyboard. Enter the following command into the terminal: `sudo apt-get update`. Once the command has finished, enter `sudo apt-get upgrade`.
   4. Type the following command into the terminal: `sudo apt install gcc make perl`. You might be requested to enter in your password again. If an error is thrown, reboot the VM and try the steps in this list again.
   5. Run: `sudo /media/$USER/VBox*/VBoxLinux*.run` This might also require you to enter your password.
   6. Run `reboot` in the terminal, and the VM should reboot. If this does not work, reboot the VM by clicking the "start" menu, and selecting "reboot."
   7. Click `devices` in the menu bar and go to `shared clipboard` then select the `bidirectional` option.
-  
-  **NOTE**: 
 
-* If upon trying to start the VM you only get a black screen, close and "power off" the VM, click "Settings -> Display" and make sure "Enable 3D Acceleration" is UNCHECKED, and Video memory is set to AT LEAST 128mb. 
-* If you receive an error when trying to mount the Guest Additions CD image ("Unable to insert the virtual optical disk"), please reboot your host (Windows/OSX) operating system. Afterwards, ensure that there is no image file mounted in *both* Virtual Box as well as in the file system of the VM. 
+  **NOTE**:
+
+* If upon trying to start the VM you only get a black screen, close and "power off" the VM, click "Settings -> Display" and make sure "Enable 3D Acceleration" is UNCHECKED, and Video memory is set to AT LEAST 128mb.
+* If you receive an error when trying to mount the Guest Additions CD image ("Unable to insert the virtual optical disk"), please reboot your host (Windows/OSX) operating system. Afterwards, ensure that there is no image file mounted in *both* Virtual Box as well as in the file system of the VM.
 
 ### Step 4: Understand Your New VM
 
@@ -131,12 +131,14 @@ For step-by-step instructions, please follow this [installation guide](https://t
 <details markdown="block">
 <summary class="dropDown-header">Windows 10 WSL (Not Supported and Not Recommended)
 </summary>
-  
-**Please note**: *Windows Subsystem for Linux is **highly discouraged and not recommended** for those unfamiliar with Linux and advanced Windows features. Specifically, those unfamiliar with with the Command Line. Please consider installing Linux in a virtual machine or dual-boot*.
+
+**Please note**: *Windows Subsystem for Linux is **not recommended** for those unfamiliar with Linux and advanced Windows features. Specifically, those unfamiliar with with the Command Line. Please consider installing Linux in a virtual machine or dual-boot*.
 
 Microsoft has recently made a shift towards embracing open source and providing more developer support. One of the biggest features they added with Windows 10 was the Windows Subsystem for Linux (WSL), which is a Linux command line within Windows. With the exception of a few minor adjustments, once you have WSL up and running, you can essentially follow the Ubuntu instructions.
 
 Having said that, setting up a development environment is not beginner friendly.  If you have run Linux environments in the past you will likely be able to get up and running, but if this is all new to you it is probably more trouble than it's worth.
+
+If you do choose to move forward with WSL, we recommend using VSCode as your text editor (we will get into text editors later), running with the "Remote - WSL" extension. This allows you to open your WSL files directly in the editor. The Linux subsystem is completely separate from your Windows subsystem and you will have to manually link them together otherwise.
 
 The Odin Project has great support for Linux/MacOS if you get stuck, so please give it a shot! If you feel you can contribute and support Windows at The Odin Project, please create a PR with Windows installation directions, and fixes for wherever the Windows commands might differ from Linux.
 
@@ -151,7 +153,7 @@ If you'd like to move forward with WSL, despite the warning above, please see be
 Microsoft has made installing WSL super simple.
 
 * Open your Start menu and search for "Microsoft Store". Open the Store.
-* Enter "Ubuntu" in the search field of the Store. 
+* Enter "Ubuntu" in the search field of the Store.
 * Click on the orange "Ubuntu 18.04" button and then click "Get".
 
 This will install WSL on your computer. The process will take about 10 minutes to complete, depending on your internet connection.
@@ -161,6 +163,8 @@ Note: If you run into an error, follow the directions [here](https://aka.ms/wsli
 ### Step 2: Start WSL
 
 WSL is nothing more than a Linux terminal inside Windows. To start the program, simply open your Start menu and search for "Ubuntu 18.04". The first time you run the program, you may get a message that says, "Installing. This may take a few minutes..." When it finishes, you will be asked to create a new username and password that will be used to log into WSL.
+
+*You can skip all of the following steps if you will be using VSCode with the "Remote - WSL" extension*
 
 ### Step 3: Set Up Symbolic Link
 
@@ -192,7 +196,7 @@ ln -s /mnt/c/Users/<your windows user name>/Documents/Projects ~/Projects
 
 * Any projects created from the WSL terminal need to be placed inside the Projects directory.
 
-* Open all of your projects through the terminal. 
+* Open all of your projects through the terminal.
 
 * The WSL program files are well hidden, but it's super important that you do not edit these files from Windows. Altering these files will cause serious problems with your Ubuntu installation and possibly with your Windows installation.
   </details>

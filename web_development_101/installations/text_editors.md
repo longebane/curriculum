@@ -9,7 +9,7 @@ Rich text editors, such as Microsoft Word and Libre-Office Writer, are great for
 
 You can think of code editors as specialized web development tools. They are highly customizable and offer many features that will make your life easier. There is nothing worse than spending 2 hours trying to figure out why your program isn't working only to realize that you missed a closing bracket. Plugins, syntax highlighting, auto-closing of brackets and braces, and linting are just a few of the benefits of using a code editor. There are many text editors out there to choose from, but we suggest starting with either VSCode or Sublime.
 
-**VSCode** is an excellent free code editor. It has outstanding add-on support and great Git integration. VSCode is the most popular code editor among Odin's students and moderators, so support is easy to find in the community. You can download and install it from [here](https://code.visualstudio.com/).
+**VSCode** is an excellent free code editor. It has outstanding add-on support and great Git integration. VSCode is the most popular code editor among Odin's students and moderators, so support is easy to find in the community. You can download and install VSCode from [here](https://code.visualstudio.com/).
 
 **Sublime** is extremely light-weight and flexible, making it favored by many. However, it's not free. You can use it for a while and then decide for yourself if it's worth purchasing. You can check it out and install it [here](https://www.sublimetext.com/).
 
@@ -28,3 +28,5 @@ On Windows and Linux, you can open VSCode from the command line by typing `code`
 #### WSL Users
 
 Although you just installed Ubuntu on your computer, you should still install the Windows version of the code editor you choose. You will edit the files in your Projects directory with the code editor, and WSL will be able to read these files.
+
+**VSCode Users:** Be sure to install the "Remote - WSL" extension when prompted. This extension will allow you to directly access your Linux files. Once installed, select the green icon in the lower left corner to connect to WSL.
